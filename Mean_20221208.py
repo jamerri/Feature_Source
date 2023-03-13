@@ -32,10 +32,10 @@ def calculate_mean(concentration):
 
 
 """读取数据"""
-wb = load_workbook(filename=r"./data/颗粒物-固定传感器采样数据-20221126/无风环境.xlsx")  # 读取路径
+wb = load_workbook(filename=r"./data/20230313-1.xlsx")  # 读取路径
 sheet = wb["Sheet1"]  # 读取名字为Sheet1的表
 
-Total_time = 300  # 总采样时间
+Total_time = 360  # 总采样时间
 time = 6  # 单次采样时间
 
 for i in range(int(Total_time/time)):
@@ -77,4 +77,4 @@ print(Mean_6)
 raw_data = np.column_stack((Mean_1, Mean_2, Mean_3, Mean_4, Mean_5, Mean_6))
 
 '''写出插值后的数据'''
-np.savetxt('./data/颗粒物-固定传感器采样数据-20221126/Mean_data_1.txt', raw_data, fmt="%.2f", delimiter=' ')
+np.savetxt('./data/20230313_1_mc.txt', raw_data, fmt="%.2f", delimiter=' ')

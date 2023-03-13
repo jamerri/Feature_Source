@@ -30,7 +30,7 @@ time_step = 0.1  # 时间步长
 Bout_1 = []
 
 """定义SC_New参数"""
-numda = 0.75  # 权重因子
+numda = 0.5  # 权重因子
 
 SC_1 = []
 SC_2 = []
@@ -92,10 +92,10 @@ def calculate_Bout(concentration):
 
 
 """读取数据"""
-wb = load_workbook(filename=r"./data/颗粒物-固定传感器采样数据-20221126/无风环境.xlsx")  # 读取路径
-sheet = wb["Sheet2"]  # 读取名字为Sheet1的表
+wb = load_workbook(filename=r"./data/20230313-1.xlsx")  # 读取路径
+sheet = wb["Sheet1"]  # 读取名字为Sheet1的表
 
-Total_time = 300  # 总采样时间
+Total_time = 360  # 总采样时间
 time = 6  # 单次采样时间
 
 for i in range(int(Total_time/time)):
@@ -150,4 +150,4 @@ print(SC_6)
 raw_data = np.column_stack((SC_1, SC_2, SC_3, SC_4, SC_5, SC_6))
 
 '''写出插值后的数据'''
-np.savetxt('./data/颗粒物-固定传感器采样数据-20221126/SC_data.txt', raw_data, fmt="%.2f", delimiter=' ')
+np.savetxt('./data/20230313_1_sc.txt', raw_data, fmt="%.2f", delimiter=' ')

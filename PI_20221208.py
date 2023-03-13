@@ -36,10 +36,10 @@ def calculate_PI(concentration):
 
 
 """读取数据"""
-wb = load_workbook(filename=r"./data/颗粒物-固定传感器采样数据-20221126/无风环境.xlsx")  # 读取路径
-sheet = wb["Sheet2"]  # 读取名字为Sheet1的表
+wb = load_workbook(filename=r"./data/20230313-1.xlsx")  # 读取路径
+sheet = wb["Sheet1"]  # 读取名字为Sheet1的表
 
-Total_time = 300  # 总采样时间
+Total_time = 360  # 总采样时间
 time = 6  # 单次采样时间
 
 for i in range(int(Total_time/time)):
@@ -81,4 +81,4 @@ print(PI_6)
 raw_data = np.column_stack((PI_1, PI_2, PI_3, PI_4, PI_5, PI_6))
 
 '''写出插值后的数据'''
-np.savetxt('./data/颗粒物-固定传感器采样数据-20221126/PI_data.txt', raw_data, fmt="%.2f", delimiter=' ')
+np.savetxt('./data/20230313_1_mpi.txt', raw_data, fmt="%.2f", delimiter=' ')

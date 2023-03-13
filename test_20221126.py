@@ -164,5 +164,5 @@ plt.colorbar()
 
 plt.title("MPI", fontdict=None, loc="center")
 # 保存图片
-plt.savefig('./data/20221216-6.85-2.25/pi.tif', bbox_inches='tight', dpi=600)
+# plt.savefig('./data/20221216-6.85-2.25/pi.tif', bbox_inches='tight', dpi=600)
 plt.show()
